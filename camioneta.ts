@@ -1,6 +1,7 @@
 import { Vehiculo } from "./vehiculo";
 export class Camioneta extends Vehiculo {
-    capCarga:any;
+    private capCarga:number;
+
     constructor(marca, modelo, anio, capCarga) {
       super(marca, modelo, anio);
       this.capCarga = capCarga;

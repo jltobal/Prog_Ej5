@@ -3,16 +3,19 @@ import {Auto} from "./auto";
 import {Camioneta} from "./camioneta";
 import {Moto} from "./moto";
 import { RegistroAutomotor } from "./registroAutomotor";
+import { AutoDeportivo } from "./autoDeportivo";
 
 let registro = new RegistroAutomotor();
 
 const auto = new Auto("Chevrolet", "Corsa", 2008, 5);
 const camioneta = new Camioneta("Ford", "Maverick", 2024, 1500);
 const moto = new Moto("Yamaha", "SR1000", 2022, 1150);
+const autoDeportivo = new AutoDeportivo("Chevrolet", "Corvette", 1987, 3, 182);
 
 registro.agregarVehiculo(auto);
 registro.agregarVehiculo(camioneta);
 registro.agregarVehiculo(moto);
+registro.agregarVehiculo(autoDeportivo);
 
 console.log(JSON.stringify(registro.listarVehiculos()));
 

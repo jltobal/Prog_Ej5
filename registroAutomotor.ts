@@ -1,39 +1,36 @@
 import { Vehiculo } from "./vehiculo";
 
-export class RegistroAutomotor {
-    vehiculos: any;
+export class RegistroAutomotor<T extends Vehiculo> {
+    protected vehiculos: T[];
 
     constructor() {
-      this.vehiculos = [];
+        this.vehiculos = [];
     }
   
-    agregarVehiculo(vehiculo) {
-      this.vehiculos.push(vehiculo);
-      console.log("Vehiculo Agregado");
+    agregarVehiculo(vehiculo: T): void {
+        this.vehiculos.push(vehiculo);
+        console.log("Vehículo agregado con éxito.");
     }
   
-    modificarVehiculo(posicion, vehiculo) {
-      if (posicion >= 0 && posicion < this.vehiculos.length) {
-        this.vehiculos[posicion] = vehiculo;
-        console.log("Vehiculo modificado");
-      } else {
-        console.log("posicion incorrecta");
-      }
-    }
-  
-    eliminarVehiculo(posicion) {
-      if (posicion >= 0 && posicion < this.vehiculos.length) {
-        for (let i = posicion; i < this.vehiculos.length; i++) {
-          this.vehiculos[i] = this.vehiculos[i + 1];
+    modificarVehiculo(posicion: number, vehiculo: T): void {
+        if (posicion >= 0 && posicion < this.vehiculos.length) {
+            this.vehiculos[posicion] = vehiculo;
+            console.log("Vehículo modificado con éxito.");
+        } else {
+            console.log("Posición incorrecta.");
         }
-        this.vehiculos[this.vehiculos.length - 1] = undefined;
-        console.log("vehiculo eliminado");
-      } else {
-        console.log("posicion incorrecta");
-      }
     }
   
-    listarVehiculos() {
-      return this.vehiculos;
+    eliminarVehiculo(posicion: number): void {
+        if (posicion >= 0 && posicion < this.vehiculos.length) {
+            this.vehiculos.splice(posicion, 1);
+            console.log("Vehículo eliminado con éxito.");
+        } else {
+            console.log("Posición incorrecta.");
+        }
     }
-  }
+  
+    listarVehiculos(): T[] {
+        return this.vehiculos;
+    }
+}

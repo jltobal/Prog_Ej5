@@ -1,6 +1,6 @@
 import { Vehiculo } from "./vehiculo";
 export class Moto extends Vehiculo {
-    cilindrada: any;    
+    private cilindrada: number;    
 
     constructor(marca, modelo, anio, cilindrada) {
       super(marca, modelo, anio);

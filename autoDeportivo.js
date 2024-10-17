@@ -15,22 +15,21 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Auto = void 0;
-// auto.ts
-var vehiculo_1 = require("./vehiculo");
-var Auto = /** @class */ (function (_super) {
-    __extends(Auto, _super);
-    function Auto(marca, modelo, anio, cantPuertas) {
-        var _this = _super.call(this, marca, modelo, anio) || this;
-        _this.cantPuertas = cantPuertas;
+exports.AutoDeportivo = void 0;
+var auto_1 = require("./auto");
+var AutoDeportivo = /** @class */ (function (_super) {
+    __extends(AutoDeportivo, _super);
+    function AutoDeportivo(marca, modelo, anio, cantPuertas, caballosFuerza) {
+        var _this = _super.call(this, marca, modelo, anio, cantPuertas) || this;
+        _this.caballosFuerza = caballosFuerza;
         return _this;
     }
-    Auto.prototype.setCantPuertas = function (cantPuertas) {
-        this.cantPuertas = cantPuertas;
+    AutoDeportivo.prototype.setCaballosFuerza = function (caballosFuerza) {
+        this.caballosFuerza = caballosFuerza;
     };
-    Auto.prototype.getCantPuertas = function () {
-        return this.cantPuertas;
+    AutoDeportivo.prototype.getCaballosFuerza = function () {
+        return this.caballosFuerza;
     };
-    return Auto;
-}(vehiculo_1.Vehiculo));
-exports.Auto = Auto;
+    return AutoDeportivo;
+}(auto_1.Auto));
+exports.AutoDeportivo = AutoDeportivo;

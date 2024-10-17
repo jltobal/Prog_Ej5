@@ -7,27 +7,24 @@ var RegistroAutomotor = /** @class */ (function () {
     }
     RegistroAutomotor.prototype.agregarVehiculo = function (vehiculo) {
         this.vehiculos.push(vehiculo);
-        console.log("Vehiculo Agregado");
+        console.log("Vehículo agregado con éxito.");
     };
     RegistroAutomotor.prototype.modificarVehiculo = function (posicion, vehiculo) {
         if (posicion >= 0 && posicion < this.vehiculos.length) {
             this.vehiculos[posicion] = vehiculo;
-            console.log("Vehiculo modificado");
+            console.log("Vehículo modificado con éxito.");
         }
         else {
-            console.log("posicion incorrecta");
+            console.log("Posición incorrecta.");
         }
     };
     RegistroAutomotor.prototype.eliminarVehiculo = function (posicion) {
         if (posicion >= 0 && posicion < this.vehiculos.length) {
-            for (var i = posicion; i < this.vehiculos.length; i++) {
-                this.vehiculos[i] = this.vehiculos[i + 1];
-            }
-            this.vehiculos[this.vehiculos.length - 1] = undefined;
-            console.log("vehiculo eliminado");
+            this.vehiculos.splice(posicion, 1);
+            console.log("Vehículo eliminado con éxito.");
         }
         else {
-            console.log("posicion incorrecta");
+            console.log("Posición incorrecta.");
         }
     };
     RegistroAutomotor.prototype.listarVehiculos = function () {

@@ -1,7 +1,7 @@
 export abstract class Vehiculo {
-    marca:any;
-    modelo: any;
-    anio: any;
+    private marca:string;
+    private modelo: string;
+    private anio: number;
     
     constructor(marca, modelo, anio) {
       this.marca = marca;
